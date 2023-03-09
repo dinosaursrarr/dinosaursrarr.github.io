@@ -94,15 +94,15 @@ void setup() {
   String routesFilename = "busRoutes.csv";
   
   //load the data
-  alert("Starting to load data at " + millis() + " milliseconds");
+  console.log("Starting to load data at " + millis() + " milliseconds");
   busStops = new busStopList("busStops.csv");
-  alert("Loaded bus stops by " + millis() + " milliseconds");
+  console.log("Loaded bus stops by " + millis() + " milliseconds");
   busRoutes = new busRouteList("busRoutes.csv");
-  alert("Loaded bus routes by " + millis() + " milliseconds");
+  console.log("Loaded bus routes by " + millis() + " milliseconds");
   busRoutes.makePairs();
-  alert("Made bus stop pairs by " + millis() + " milliseconds");
+  console.log("Made bus stop pairs by " + millis() + " milliseconds");
   busStops.sortRoutes();
-  alert("Sorted bus routes at each stop by " + millis() + " milliseconds");
+  console.log("Sorted bus routes at each stop by " + millis() + " milliseconds");
   
   //load symbols
   tubeLogo = loadShape("tubeRoundel.svg");
