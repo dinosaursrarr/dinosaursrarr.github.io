@@ -162,6 +162,19 @@ void mouseDragged() {
   }
 }
 
+void mouseScrolled() {
+  console.log(mouseScroll);
+  zoomFactor.value += 0.03 * mouseScroll;
+  if (zoomFactor.value < 0.01) {
+    zoomFactor.value = 0.01;
+  }
+  if (zoomFactor.value > 1) {
+    zoomFactor.value = 1;
+  }
+  busStops.updateScreen();
+  stopPairs.updateScreen();
+}
+
 void keyPressed() {
   if (key == '-') { //zoom out
     zoomFactor.value /= 1.03;
